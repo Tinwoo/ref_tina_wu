@@ -1,9 +1,7 @@
 # ref_tina_wu
 
 #project_1:
-A website includes 3 games related to hand(#button game and #bubble game) and the whole body(#push up) exercises applying machine learning with Mediapipe solutions.
-
-I am mainly responsible for the button game and the bubble game.
+A website includes 3 games related to hand(#button game and #bubble game) and the whole body(#push up) exercises applying machine learning with Mediapipe solutions. In this project, I mainly worked on the button game and the bubble game.
 for example:
 -private/js folder: bubble.js, button.js; 
 -routers folder: exeRoutes.ts; 
