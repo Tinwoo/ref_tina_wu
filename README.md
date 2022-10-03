@@ -10,4 +10,4 @@ for example:
 -services folder: exeService.ts;
 
 #project_2:
-only include the data sections which I worked on.
+only including files related to the data sections which I worked on.
