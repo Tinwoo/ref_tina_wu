@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- mediapipe -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"
+            crossorigin="anonymous"
+        ></script>
+        <!-- P5 -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script> -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <!-- bootstrap -->
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+
+        <link rel="stylesheet" href="./css/bubble.css" />
+        <link rel="stylesheet" href="./css/bubble_PopCreateRoom.css" />
+        <link rel="stylesheet" href="./css/bubble_PopJoinRoom.css" />
+        <link rel="stylesheet" href="css/private_nav.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <header></header>
+        <!-- nav bar -->
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" id="logout" href="index.html">Logout</a>
+                <a class="navbar-brand" href="admin_index.html">Main</a>
+                <a class="navbar-brand" href="record.html">Record</a>
+                <a class="navbar-brand" href="ranking_private.html">Ranking</a>
+                <div class="dropdown">
+                    <a
+                        class="game btn btn-warning dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        Games
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="pushUp.html"
+                                >PushUp</a
+                            >
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="button.html"
+                                >Button</a
+                            >
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="bubble.html"
+                                >Bubble</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- end nav bar -->
+
+        <div class="container">
+            <div class="highest">
+                <div
+                    class="card"
+                    style="background-color: blue; color: white; width: 500px"
+                >
+                    <h5 class="card-header">Highest Record:</h5>
+                    <div class="card-body">
+                        <li class="list-group-item">
+                            <div class="highestRecord"></div>
+                        </li>
+                    </div>
+                </div>
+
+                <div
+                    class="card"
+                    style="background-color: green; color: white; width: 500px"
+                >
+                    <h5 class="card-header">Your Highest Scores:</h5>
+                    <div class="card-body">
+                        <li class="list-group-item">
+                            <div class="personalHighestScores"></div>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div class="tips">tips: hit the bubbles to change color</div>
+
+            <div class="panel">
+                <button type="button" class="btn btn-danger start">
+                    START
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-outline-warning BoxingMode"
+                >
+                    Boxing👊
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-outline-warning KungFuMode"
+                >
+                    Ninja⚔️
+                </button>
+                <button type="button" class="btn btn-outline-warning PalmMode">
+                    Palm✋[DEFAULT]
+                </button>
+            </div>
+            <div class="room">
+                <!-- Create Room The Modal -->
+                <button
+                    id="myBtn"
+                    style="margin: 0; font-size: 25px; border-radius: 3px"
+                    class="bubbly-button editProfile"
+                    style="font-family: 'Indie Flower', cursive"
+                >
+                    create room
+                </button>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+
+                        <div class="reg_header">
+                            <div class="reg_title" id="hey"></div>
+                        </div>
+
+                        `
+                        <form id="form-register">
+                            <div class="input_area">
+                                <div class="essential_items">
+                                    <div id="id"></div>
+                                </div>
+                            </div>
+                        </form>
+                        `
+                    </div>
+                </div>
+
+                <!-- Join room The Modal -->
+                <button
+                    id="joinBtn"
+                    style="margin: 0; font-size: 25px; border-radius: 3px"
+                    class="bubbly-button editProfile"
+                    style="font-family: 'Indie Flower', cursive"
+                >
+                    join room
+                </button>
+
+                <!-- The Modal -->
+                <div id="joinModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="joinClose">&times;</span>
+
+                        <div class="reg_header">
+                            <div class="reg_title" id="joinHeader">
+                                Enter Room No:
+                            </div>
+                        </div>
+
+                        `
+                        <form id="join-form-register">
+                            <div class="input_area">
+                                <div class="essential_items">
+                                    <div class="regItem col-sm-2">
+                                        <label for="NewNickName"
+                                            >Room No.: *</label
+                                        ><br />
+                                        <input
+                                            type="text"
+                                            name="NewNickName"
+                                            placeholder=""
+                                            id="nickname"
+                                            class="inputbox"
+                                        /><br />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="submit_button col-sm-6">
+                                <input type="submit" value="Submit" />
+                            </div>
+                        </form>
+                        `
+                    </div>
+                </div>
+            </div>
+
+            <video class="input_video" hidden="true"></video>
+            <canvas
+                class="output_canvas"
+                width="1742px"
+                height="980px"
+            ></canvas>
+
+            <div class="notification">
+                <div class="timer_container">
+                    <span style="font-size: 50px; color: orange"
+                        >TIMER:
+                        <span
+                            class="timer border border-secondary"
+                            style="
+                                background-color: orange;
+                                font-size: 70px;
+                                color: black;
+                            "
+                            >40</span
+                        ></span
+                    >
+                </div>
+
+                <div class="scores_container">
+                    <span style="font-size: 50px; color: red"
+                        >SCORES:
+                        <span
+                            class="scores border border-secondary"
+                            style="
+                                background-color: red;
+                                font-size: 70px;
+                                color: black;
+                            "
+                            >0</span
+                        ></span
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!--opponent-->
+
+        <div class="myName"></div>
+        <div class="teammate">
+            <div class="vsName"></div>
+            <div class="dual-count" type="number"></div>
+        </div>
+
+        <audio id="myAudio">
+            <source src="beep.mp3" type="audio/mpeg" />
+        </audio>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="./js/logout.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="module" src="./js/bubble.js"></script>
+        <script type="module" src="./js/bubble_PopCreateRoom.js"></script>
+        <script type="module" src="./js/bubble_PopJoinRoom.js"></script>
+    </body>
+</html>

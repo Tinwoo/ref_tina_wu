@@ -1,0 +1,101 @@
+.dual-count {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 10000;
+    font-size: 100px;
+}
+
+.output_canvas {
+    position: relative;
+    z-index: 0;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); /* Safari and Chrome */
+    -moz-transform: rotateY(180deg); /* Firefox */
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body {
+    /*background: blue;*/
+    background-image: linear-gradient(
+        to bottom right,
+        rgb(45, 42, 42),
+        rgb(56, 58, 56),
+        gray
+    );
+    font-family: 'Press Start 2P', cursive;
+}
+
+.notification {
+    display: flex;
+    flex-direction: row;
+}
+
+.scores_container {
+    position: relative;
+    z-index: 10;
+    bottom: 950px;
+    right: -150px;
+    /* left: 5px; */
+}
+
+.timer_container {
+    position: relative;
+    z-index: 10;
+    bottom: 950px;
+    right: 250px;
+    /* left: 5px; */
+}
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.output_canvas {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); /* Safari and Chrome */
+    -moz-transform: rotateY(180deg); /* Firefox */
+    /* margin-left: 20px; */
+    position: relative;
+}
+
+/*  */
+
+.highest {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.teammate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    bottom: 950px;
+    right: 750px;
+}

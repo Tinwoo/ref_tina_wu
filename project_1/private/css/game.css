@@ -1,0 +1,9 @@
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    position: absolute;
+    bottom: 0;
+}

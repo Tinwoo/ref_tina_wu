@@ -1,0 +1,81 @@
+.hidden {
+    display: none;
+}
+
+.container {
+    /* margin-left: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar-brand {
+    color: black;
+}
+
+body {
+    /* background-color: blue; */
+    background-image: linear-gradient(
+        to bottom right,
+        rgb(45, 42, 42),
+        rgb(56, 58, 56),
+        gray
+    );
+    font-family: 'Press Start 2P', cursive;
+}
+
+.notification {
+    display: flex;
+    flex-direction: row;
+}
+
+.scores_container {
+    position: relative;
+    z-index: 10;
+    bottom: 950px;
+    right: -150px;
+    /* left: 5px; */
+}
+
+.timer_container {
+    position: relative;
+    z-index: 10;
+    bottom: 950px;
+    right: 250px;
+    /* left: 5px; */
+}
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.output_canvas {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); /* Safari and Chrome */
+    -moz-transform: rotateY(180deg); /* Firefox */
+    /* margin-left: 20px; */
+    position: relative;
+}
+
+.input_video {
+}
+
+/*  */
+
+.highest {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+}

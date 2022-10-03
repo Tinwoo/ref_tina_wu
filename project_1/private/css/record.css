@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gentium+Book+Plus:wght@700&display=swap');
+
+div a {
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.container img {
+    width: 100%;
+    height: 100vh;
+}
+
+.centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-family: 'Black Ops One', cursive;
+    font-size: 40px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+th,
+td {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
+}
+
+.rank_container {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

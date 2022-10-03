@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gentium+Book+Plus:wght@700&display=swap');
+
+div a {
+    font-family: 'Press Start 2P', cursive;
+}
+
+#game-name {
+    font-family: 'Black Ops One', cursive;
+    font-size: 40px;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background-image: url('gamebackground.jpg');
+    background-repeat: repeat;
+}
+
+.game {
+    font-size: 30px;
+}
